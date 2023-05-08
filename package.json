@@ -1,10 +1,10 @@
 {
-  "name": "tsup-library-template",
+  "name": "stream-fetch-processor",
   "version": "0.0.1",
-  "description": "A template for building a library with tsup",
-  "author": "ozerorhun@gmail.com",
+  "description": "SSE - A Stream Fetch Processor",
+  "author": "aki.me.morin@gmail.com",
   "license": "MIT",
-  "url": "https://github.com/orabazu/tsup-libary-template",
+  "url": "https://github.com/akirco/stream-fetch-processor",
   "scripts": {
     "ts-types": "tsc",
     "build:dev": "rimraf lib && tsup --watch",

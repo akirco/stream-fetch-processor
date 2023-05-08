@@ -1,6 +1,6 @@
 {
   "name": "stream-fetch-processor",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "SSE - A Stream Fetch Processor",
   "author": "aki.me.morin@gmail.com",
   "license": "MIT",
@@ -8,15 +8,17 @@
   "scripts": {
     "ts-types": "tsc",
     "build:dev": "rimraf lib && tsup --watch",
-    "build:prod": "rimraf dist && env NODE_ENV=production tsup",
+    "build:prod": "rimraf dist &&  cross-env NODE_ENV=production tsup",
     "build:watch": "tsup --watch",
     "lint:fix": "eslint ./src --ext .ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{ts,tsx,css,md,json}\" ",
     "lint": "yarn lint:format && yarn lint:fix "
   },
   "devDependencies": {
+    "@types/node": "^20.1.0",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
@@ -26,15 +28,14 @@
     "rimraf": "^5.0.0",
     "tsup": "^6.7.0"
   },
-  "main": "lib/index.cjs",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "dependencies": {
     "typescript": "^5.0.4"
   },
   "files": [
-    "lib",
     "dist"
   ]
 }

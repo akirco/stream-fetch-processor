@@ -9,12 +9,11 @@ interface StreamFetchProcessorResult {
 type StreamFetchProcessorReader = ReadableStreamDefaultReader<Uint8Array> | null | undefined;
 declare class StreamFetchProcessor {
     private decoder;
-    private fetchFn;
     private reader;
     private controller;
     private response;
     constructor(options?: StreamFetchProcessorOptions);
-    fetch(input: RequestInfo | URL, init?: RequestInit, retry?: number): Promise<Response>;
+    fetchData(input: RequestInfo | URL, init?: RequestInit | undefined, retry?: number): Promise<Response>;
     read(response?: Response): Promise<{
         done: boolean;
         value: string;

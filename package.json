@@ -1,6 +1,6 @@
 {
   "name": "stream-fetch-processor",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "SSE - A Stream Fetch Processor",
   "author": "aki.me.morin@gmail.com",
   "license": "MIT",
@@ -26,15 +26,13 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.0",
-    "tsup": "^6.7.0"
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
   },
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "dependencies": {
-    "typescript": "^5.0.4"
-  },
   "files": [
     "dist"
   ]

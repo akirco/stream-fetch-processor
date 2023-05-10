@@ -1,7 +1,7 @@
 {
   "name": "stream-fetch-processor",
-  "version": "0.1.4",
-  "description": "SSE - A Stream Fetch Processor",
+  "version": "0.1.8",
+  "description": "SSE - A Stream Fetch Processor [developing]",
   "author": "aki.me.morin@gmail.com",
   "license": "MIT",
   "url": "https://github.com/akirco/stream-fetch-processor",
@@ -35,5 +35,6 @@
   "type": "module",
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }

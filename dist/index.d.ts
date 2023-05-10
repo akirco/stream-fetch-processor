@@ -1,23 +1,22 @@
-interface StreamFetchProcessorOptions {
+interface StreamFetchProcessorOptions<T> {
     signal?: AbortSignal;
     decoder?: TextDecoder;
+    parser?: (value: string) => T;
 }
-interface StreamFetchProcessorResult {
+interface StreamFetchProcessorResult<T> {
     done: boolean;
-    value: string;
+    value: T;
 }
 type StreamFetchProcessorReader = ReadableStreamDefaultReader<Uint8Array> | null | undefined;
-declare class StreamFetchProcessor {
+declare class StreamFetchProcessor<T = string> {
     private decoder;
     private reader;
     private controller;
     private response;
-    constructor(options?: StreamFetchProcessorOptions);
+    private parser;
+    constructor(options?: StreamFetchProcessorOptions<T>);
     fetchData(input: RequestInfo | URL, init?: RequestInit | undefined, retry?: number): Promise<Response>;
-    read(response?: Response): Promise<{
-        done: boolean;
-        value: string;
-    }>;
+    read(response?: Response): Promise<StreamFetchProcessorResult<T>>;
     cancel(): void;
 }
 
